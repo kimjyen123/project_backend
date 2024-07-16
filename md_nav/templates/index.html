@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Sales Dashboard</title>
+</head>
+<body>
+    <h1>Medical Sales Dashboard</h1>
+
+    <h2>Doctors</h2>
+    <ul id="doctors-list"></ul>
+
+    <h2>Meetings</h2>
+    <ul id="meetings-list"></ul>
+
+    <h2>Customers</h2>
+    <ul id="customers-list"></ul>
+
+    <h2>Devices</h2>
+    <ul id="devices-list"></ul>
+
+    <!-- Include the JavaScript file -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Sales Dashboard</title>
+</head>
+<body>
+    <h1>Medical Sales Dashboard</h1>
+
+    <h2>Doctors</h2>
+    <ul>
+    {% for doctor in doctors %}
+        <li>{{ doctor.first_name }} {{doctor.last_name}} - {{ doctor.hospital }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Meetings</h2>
+    <ul>
+    {% for meeting in meetings %}
+        <li>{{ meeting.doctor.first_name }} {{meeting.doctor.last_name}} - {{ meeting.meeting_date }} - {{ meeting.instrument_name }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Customers</h2>
+    <ul>
+    {% for customer in customers %}
+        <li>{{ customer.name }} - {{ customer.linkedin_info }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Devices</h2>
+    <ul>
+    {% for device in devices %}
+        <li>{{ device.device_name }} - {{ device.summary_of_recent_papers }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html> {% endcomment %}
