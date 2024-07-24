@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%1$_5++2@wg1&*x5d-h3h44)3bga2e!4v_8evx@bvkvl$&&!r7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.7.221']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.7.221', '0.0.0.0', 'mdnavenv2.eba-7c8mvb5g.us-east-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -113,12 +113,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+import os 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# Set the STATIC_ROOT for collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
