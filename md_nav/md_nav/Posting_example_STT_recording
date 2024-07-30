@@ -1,0 +1,13 @@
+curl -X POST "http://mdnavenv2.eba-7c8mvb5g.us-east-2.elasticbeanstalk.com/api/recordings/" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "recording_data": "6/18 7:30am - EUSRA case support at NYU, Dr. Gonda, requested 7mm EUSRA and potentially 10mm. Ended up with 2 x 7mm EUSRA. Dr. Kahaleh stopped by to observe the case, discussed the ablation zone. He might have a patient who can be treated with EUSRA. Requested the data about IPMN. 11am: Mt Sinai, dropped off the ELRA brochure for Dr. Habor. Emily(main tech) told Dr. Habor is BSC consultant and working closely with BSC. 4pm: in-service for cystotome at NYP, 4 staffs show up. Asked me the ERBE power setting. Especially newest version of ERBE. Need to find out recommended power with it. Dr. Sathi will be in Korea for ENDO 2020 meeting in July. Told Dr. Sathi we might set up a dinner with our team in Korea. Dr. Sathi phone number is 331.346.9857",
+           "posted_timestamp": "2024-07-24T00:00:00Z"
+         }'
+
+
+curl -X POST "http://mdnavenv2.eba-7c8mvb5g.us-east-2.elasticbeanstalk.com/api/doctors/" \
+     -H "Content-Type: application/json" \
+     -d '{"first_name": "Alice", "last_name": "Johnson", "hospital": "Greenwood Hospital", "city": "Seattle", "state": "WA"}'
+
+curl -X GET "http://mdnavenv2.eba-7c8mvb5g.us-east-2.elasticbeanstalk.com/api/recordings/"
