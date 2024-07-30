@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import viewsets
-from .models import Doctor, Meeting, Customer, Device
-from .serializers import DoctorSerializer, MeetingSerializer, CustomerSerializer, DeviceSerializer
+from .models import Doctor, Meeting, Customer, Device, Recording
+from .serializers import DoctorSerializer, MeetingSerializer, CustomerSerializer, DeviceSerializer, RecordingSerializer
 
 class DoctorViewSet(viewsets.ModelViewSet):
     queryset = Doctor.objects.all()
@@ -20,3 +20,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
 class DeviceViewSet(viewsets.ModelViewSet):
     queryset = Device.objects.all()
     serializer_class = DeviceSerializer
+
+class RecordingViewSet(viewsets.ModelViewSet):
+    queryset = Recording.objects.all()
+    serializer_class = RecordingSerializer

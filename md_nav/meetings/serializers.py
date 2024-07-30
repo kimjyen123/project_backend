@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Doctor, Meeting, Customer, Device
+from .models import Doctor, Meeting, Customer, Device, Recording
 
 
 class DoctorSerializer(serializers.ModelSerializer):
@@ -28,3 +28,7 @@ class DeviceSerializer(serializers.ModelSerializer):
         model = Device
         fields = '__all__'
 
+class RecordingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Recording
+        fields = '__all__'

@@ -51,3 +51,10 @@ class Device(models.Model):
 
     def __str__(self):
         return self.device_name
+
+class Recording(models.Model):
+    recording_data = models.TextField()
+    posted_timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Recording for {self.doctor.first_name} {self.doctor.last_name}"
